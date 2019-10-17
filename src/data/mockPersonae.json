@@ -1,0 +1,26 @@
+[{
+    "firstname": "Yuko",
+    "middlename": "",
+    "lastname": "Watanabe",
+    "ethnicity": "japanese",
+    "birthday": "01011980",
+    "gender": "nonbinary",
+    "nationality": ["unitedkingdom"],
+    "maritalstatus": "married",
+    "sexuality": "polyamourous",
+    "children": 1,
+    "profession": "medicaldoctor"
+},
+{
+    "firstname": "Ibrahim",
+    "middlename": "Daoud",
+    "lastname": "Aboulafia",
+    "ethnicity": "morrocan",
+    "birthday": "15101975",
+    "gender": "transmale",
+    "nationality": ["france","morocco"],
+    "maritalstatus": "single",
+    "sexuality": "bicurious",
+    "children": 0,
+    "profession": "pilot"
+}]
