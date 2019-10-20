@@ -51,7 +51,7 @@ class Persona {
 			return err;
 		}
 	}
-	generatePersona = () => {
+	generatePersona() {
 		return {
 			nationality: this.getNationality(),
 			sexuality  : this.getSexuality(),

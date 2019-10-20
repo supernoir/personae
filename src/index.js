@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
+const PROTOCOL = 'http';
 const PORT = 8080 | process.env.port;
-const HOST = '0.0.0.0';
+const HOST = '127.0.0.1';
 const mockPersonae = require('./data/mockPersonae.json');
 const { Persona } = require('./controllers/Persona');
 const { getWeighingFromRequest } = require('./util/parseRequest');
@@ -60,3 +61,9 @@ app.get('/personae/random/sexuality', (req, res) => {
 
 app.listen(PORT, HOST);
 process.stdout.write(`Service running | port ${PORT} | host ${HOST}\n`);
+
+module.exports = {
+	PORT,
+	HOST,
+	PROTOCOL
+};
