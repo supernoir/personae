@@ -3,7 +3,8 @@ const app = express();
 const PORT = 8080 | process.env.port;
 const HOST = '0.0.0.0';
 const mockPersonae = require('./data/mockPersonae.json');
-const { generatePersona } = require('./controllers/persona');
+const { Persona } = require('./controllers/Persona');
+const { getWeighingFromRequest } = require('./util/parseRequest');
 
 app.get('/', (req, res) => {
 	res.json({
@@ -14,15 +15,46 @@ app.get('/', (req, res) => {
 	});
 });
 
-app.get('/personae', (req, res) => {
+app.get('/personae/mock', (req, res) => {
 	res.json({
 		personae: mockPersonae
 	});
 });
 
 app.get('/personae/random', (req, res) => {
+	let currentWeighing = getWeighingFromRequest(req);
+	let persona = new Persona(currentWeighing);
+
 	res.json({
-		persona: generatePersona()
+		persona : persona.generatePersona(),
+		weighing: currentWeighing
+	});
+});
+
+app.get('/personae/random/gender', (req, res) => {
+	let currentWeighing = getWeighingFromRequest(req);
+	let persona = new Persona(currentWeighing);
+	res.json({
+		persona : persona.getGenderIdentity(),
+		weighing: currentWeighing
+	});
+});
+
+app.get('/personae/random/nationality', (req, res) => {
+	let currentWeighing = getWeighingFromRequest(req);
+	let persona = new Persona(currentWeighing);
+	res.json({
+		persona : persona.getGenderIdentity(),
+		weighing: currentWeighing
+	});
+});
+
+app.get('/personae/random/sexuality', (req, res) => {
+	let currentWeighing = getWeighingFromRequest(req);
+	let persona = new Persona(currentWeighing);
+	res.json({
+		persona : persona.getSexuality(),
+		weighing: currentWeighing
 	});
 });
 

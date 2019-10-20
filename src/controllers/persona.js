@@ -4,54 +4,64 @@ const genderidentities = require('./../data/genderidentities.json');
 const util = require('../util/getRandom');
 
 // Define constants
+const WEIGHING = {
+	AVERAGE: 'average',
+	REDUCED: 'reduced',
+	BOOSTED: 'boosted'
+};
 const DEFAULT_MIN_AGE = 6;
 const DEFAULT_MAX_AGE = 99;
 
-const getNationality = () => {
-	try {
-		const randomNationality = util.getRandom(0, nationalities.length);
-		return nationalities[randomNationality];
-	} catch (err) {
-		return err;
+class Persona {
+	constructor(weighing) {
+		this.weighing = weighing;
 	}
-};
-
-const getSexuality = () => {
-	try {
-		const randomSexuality = util.getRandom(0, sexualities.length);
-		return sexualities[randomSexuality];
-	} catch (err) {
-		return err;
+	getNationality() {
+		try {
+			const randomNationality = util.getRandom(0, nationalities.length);
+			return nationalities[randomNationality];
+		} catch (err) {
+			return err;
+		}
 	}
-};
 
-const getGenderIdentity = () => {
-	try {
-		const randomGenderIdentity = util.getRandom(0, genderidentities.length);
-		return genderidentities[randomGenderIdentity];
-	} catch (err) {
-		return err;
+	getSexuality() {
+		try {
+			const randomSexuality = util.getRandom(0, sexualities.length);
+			return sexualities[randomSexuality];
+		} catch (err) {
+			return err;
+		}
 	}
-};
 
-const getAge = (min = DEFAULT_MIN_AGE, max = DEFAULT_MAX_AGE) => {
-	try {
-		const randomAge = util.getRandom(min, max);
-		return randomAge;
-	} catch (err) {
-		return err;
+	getGenderIdentity() {
+		try {
+			const randomGenderIdentity = util.getRandom(0, genderidentities.length);
+			return genderidentities[randomGenderIdentity];
+		} catch (err) {
+			return err;
+		}
 	}
-};
 
-const generatePersona = () => {
-	return {
-		nationality: getNationality(),
-		sexuality  : getSexuality(),
-		gender     : getGenderIdentity(),
-		age        : getAge()
-	};
-};
+	getAge(min = DEFAULT_MIN_AGE, max = DEFAULT_MAX_AGE) {
+		try {
+			const randomAge = util.getRandom(min, max);
+			return randomAge;
+		} catch (err) {
+			return err;
+		}
+	}
+	generatePersona = () => {
+		return {
+			nationality: this.getNationality(),
+			sexuality  : this.getSexuality(),
+			gender     : this.getGenderIdentity(),
+			age        : this.getAge()
+		};
+	}
+}
 
 module.exports = {
-	generatePersona
+	Persona,
+	WEIGHING
 };
