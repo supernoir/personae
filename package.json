@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./src/index",
-    "test": "jest ./src"
+    "test": "jest ./src --ci --forceExit"
   },
   "author": "",
   "license": "MIT",

@@ -1,0 +1,16 @@
+---
+image: node:8.9.1
+
+stages:
+  - test
+
+# ----------------------------------
+# TEST
+# ----------------------------------
+
+test:
+  stage: test
+  before_script:
+    - npm install
+  script:
+    - npm run test
