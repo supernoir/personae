@@ -1,4 +1,4 @@
-const { WEIGHING } = require('./../controllers/Persona');
+const { WEIGHING } = require('../controllers/persona');
 
 const getWeighingFromRequest = request => {
 	if (request.query && request.query.weighing) {
