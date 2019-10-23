@@ -1,5 +1,5 @@
 ---
-image: node:8.9.1
+image: node:latest
 
 stages:
   - test
@@ -10,7 +10,6 @@ stages:
 
 test:
   stage: test
-  before_script:
-    - npm install
   script:
+    - npm install
     - npm run test

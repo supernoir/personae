@@ -4,7 +4,7 @@ const PROTOCOL = 'http';
 const PORT = 8080 | process.env.port;
 const HOST = '0.0.0.0';
 const mockPersonae = require('./data/mockPersonae.json');
-const { Persona } = require('./controllers/Persona');
+const { Persona } = require('./controllers/Persona.js');
 const { getWeighingFromRequest } = require('./util/parseRequest');
 
 app.get('/', (req, res) => {
