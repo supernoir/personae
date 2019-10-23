@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/index",
-    "test": "jest ./src --ci --forceExit"
+    "start": "nodemon ./src/server",
+    "test": "jest ./src/tests --ci --forceExit"
   },
   "author": "",
   "license": "MIT",

@@ -1,6 +1,6 @@
 const supertest = require('supertest');
 const request = require('supertest');
-const { app, PORT, HOST, PROTOCOL } = require('./index');
+const { app, PORT, HOST, PROTOCOL } = require('../index');
 const TEST_AGENT = `${PROTOCOL || 'http'}://${HOST || 'localhost'}:${PORT || process.env.PORT}`;
 const server = supertest.agent(TEST_AGENT);
 
