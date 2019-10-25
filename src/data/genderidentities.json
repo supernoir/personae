@@ -1,44 +1,56 @@
 [
-    "Agender",
-    "Androgyne",
-    "Androgynous",
-    "Bigender",
-    "Cis",
-    "Cisgender",
-    "Cis Female",
-    "Cis Male",
-    "Cis Man",
-    "Cis Woman",
-    "Cisgender Female",
-    "Cisgender Male",
-    "Cisgender Man",
-    "Cisgender Woman",
-    "Female to Male",
-    "Gender Fluid",
-    "Gender Nonconforming",
-    "Gender Questioning",
-    "Gender Variant",
-    "Genderqueer",
-    "Intersex",
-    "Male to Female",
-    "Neither",
-    "Neutrois",
-    "Non-binary",
-    "Other",
-    "Pangender",
-    "Trans Man",
-    "Trans Person",
-    "Trans Woman",
-    "Transfeminine",
-    "Transgender",
-    "Transgender Female",
-    "Transgender Male",
-    "Transgender Man",
-    "Transgender Person",
-    "Transgender Woman",
-    "Transmasculine",
-    "Transsexual",
-    "Transsexual Female",
-    "Transsexual Male",
-    "Transsexual Man"
-  ]
+  {
+    "identifier": "Woman",
+    "description": "Cisgender",
+    "spectrum": "feminine",
+    "weight": 0.8
+  },
+  {
+    "identifier": "Woman",
+    "description": "Transgender",
+    "spectrum": "feminine",
+    "weight": 0.1
+  },
+  {
+    "identifier": "Man",
+    "description": "Cisgender",
+    "spectrum": "masculine",
+    "weight": 0.8
+  },
+  {
+    "identifier": "Man",
+    "description": "Transgender",
+    "spectrum": "masculine",
+    "weight": 0.1
+  },
+  {
+    "identifier": "Genderqueer",
+    "description": "Non-binary",
+    "spectrum": "neutral",
+    "weight": 0.01
+  },
+  {
+    "identifier": "Intersex",
+    "description": "Non-binary",
+    "spectrum": "neutral",
+    "weight": 0.01
+  },
+  {
+    "identifier": "Non-binary",
+    "description": "Non-binary",
+    "spectrum": "neutral",
+    "weight": 0.01
+  },
+  {
+    "identifier": "Pangender",
+    "description": "Non-binary",
+    "spectrum": "neutral",
+    "weight": 0.01
+  },
+  {
+    "identifier": "Agender",
+    "description": "Non-binary",
+    "spectrum": "neutral",
+    "weight": 0.01
+  }
+]

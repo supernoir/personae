@@ -1,19 +1,17 @@
 const getRandom = (min, max) => Math.ceil(Math.random() * (max - min) + min);
 
-const getWeightedRandom = weighting => {
+const getWeightedRandom = specification => {
 	let table = [];
-
-	for (let i in weighting) {
-		for (let j = 0; j < weighting[i] * 10; j++) {
+	for (let i in specification) {
+		for (let j = 0; j < specification[i] * 10; j++) {
 			table.push(i);
 		}
 	}
-	return function() {
+
+	return () => {
 		return table[Math.floor(Math.random() * table.length)];
 	};
 };
-
-//const testRand = getWeightedRandom({ 0: 0.8, 1: 0.1, 2: 0.1 });
 
 module.exports = {
 	getRandom,

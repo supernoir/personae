@@ -36,8 +36,15 @@ class Persona {
 
 	getGenderIdentity() {
 		try {
-			const randomGenderIdentity = util.getRandom(0, genderidentities.length);
-			return genderidentities[randomGenderIdentity];
+			let spec = genderidentities.map(identity => identity.weight);
+			const generateWeightedRandom = util.getWeightedRandom(spec);
+			const weightedRandomIdentity = generateWeightedRandom();
+			const defaultRandomIdentity = util.getRandom(0, genderidentities.length);
+
+			return {
+				unweighted: genderidentities[defaultRandomIdentity],
+				weighted  : genderidentities[weightedRandomIdentity]
+			};
 		} catch (err) {
 			return err;
 		}
