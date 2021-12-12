@@ -1,6 +1,8 @@
 const nationalities = require('./../data/nationalities.json')
 const sexualities = require('./../data/sexualities.json')
 const genderidentities = require('./../data/genderidentities.json')
+const dndClasses = require('./../data/dnd-classes.json')
+const dndRaces = require('./../data/dnd-races.json')
 const util = require('../util/getRandom')
 
 // Define constants
@@ -65,6 +67,31 @@ class Persona {
 			sexuality: this.getSexuality(),
 			gender: this.getGenderIdentity(),
 			age: this.getAge()
+		}
+	}
+
+	getDndRace() {
+		try {
+			const randomDndRace = util.getRandom(0, dndRaces.length)
+			return dndRaces[randomDndRace]
+		} catch (err) {
+			return err
+		}
+	}
+
+	getDndClass() {
+		try {
+			const randomDndClass = util.getRandom(0, dndClasses.length)
+			return dndClasses[randomDndClass]
+		} catch (err) {
+			return err
+		}
+	}	
+
+	generateCharacter() {
+		return {
+			race: this.getDndRace(),
+			class: this.getDndClass(),
 		}
 	}
 
