@@ -13,6 +13,9 @@
         <span class="highlight">Gender</span>
         {{ character.gender.description }} / {{ character.gender.identifier }}
       </li>
+      <li>
+        <span class="highlight">Profession</span> {{ character.profession }}
+      </li>
     </ul>
     <button id="regenerate" v-on:click="regenerate">Generate new persona</button>
 
@@ -64,6 +67,7 @@ export default {
               nationality: response.data.persona.nationality,
               age: response.data.persona.age,
               sexuality: response.data.persona.sexuality,
+              profession: response.data.persona.profession,
               gender: {
                 description:
                   response.data.persona.gender.unweighted.description,

@@ -1,4 +1,5 @@
 const nationalities = require('./../data/nationalities.json')
+const profession = require('./../data/professions.json')
 const sexualities = require('./../data/sexualities.json')
 const genderidentities = require('./../data/genderidentities.json')
 const dndClasses = require('./../data/dnd-classes.json')
@@ -36,6 +37,15 @@ class Persona {
 		}
 	}
 
+	getProfession() {
+		try {
+			const randomProfession = util.getRandom(0, profession.length)
+			return profession[randomProfession]
+		} catch (err) {
+			return err
+		}
+	}
+
 	getGenderIdentity() {
 		try {
 			let spec = genderidentities.map(identity => identity.weight)
@@ -66,7 +76,8 @@ class Persona {
 			nationality: this.getNationality(),
 			sexuality: this.getSexuality(),
 			gender: this.getGenderIdentity(),
-			age: this.getAge()
+			age: this.getAge(),
+			profession: this.getProfession()
 		}
 	}
 
