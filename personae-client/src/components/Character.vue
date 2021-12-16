@@ -70,8 +70,8 @@ export default {
               profession: response.data.persona.profession,
               gender: {
                 description:
-                  response.data.persona.gender.unweighted.description,
-                identifier: response.data.persona.gender.unweighted.identifier,
+                  response.data.persona.gender.weighted.description,
+                identifier: response.data.persona.gender.weighted.identifier,
               },
             },
           ];
