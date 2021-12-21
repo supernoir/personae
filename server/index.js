@@ -84,9 +84,6 @@ app.get('/personae/dnd/random', (req, res) => {
 	})
 })
 
-module.exports = {
-	app,
-	PORT,
-	HOST,
-	PROTOCOL
-}
+app.listen(PORT, HOST, null, () => {
+	process.stdout.write(`Service running | port ${PORT} | host ${HOST}\n`);
+});

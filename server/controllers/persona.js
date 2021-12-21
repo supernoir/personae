@@ -1,9 +1,9 @@
-const nationalities = require('./../data/nationalities.json')
-const profession = require('./../data/professions.json')
-const sexualities = require('./../data/sexualities.json')
-const genderidentities = require('./../data/genderidentities.json')
-const dndClasses = require('./../data/dnd-classes.json')
-const dndRaces = require('./../data/dnd-races.json')
+const nationalities = require('../data/nationalities.json')
+const profession = require('../data/professions.json')
+const sexualities = require('../data/sexualities.json')
+const genderidentities = require('../data/genderidentities.json')
+const dndClasses = require('../data/dnd-classes.json')
+const dndRaces = require('../data/dnd-races.json')
 const util = require('../util/getRandom')
 
 // Define constants

@@ -19,7 +19,7 @@
     </ul>
     <button id="regenerate" v-on:click="regenerate">Generate new persona</button>
 
-<svg width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<!-- <svg width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g transform="matrix(1,0,0,1.13617,-0.768639,-5.28781)">
         <circle cx="100.769" cy="86.157" r="54.329" id="face" />
     </g>
@@ -48,7 +48,7 @@
             <path d="M119.72,113.49C130.604,113.49 139.441,86.858 139.441,97.742C139.441,108.626 130.604,136.798 119.72,136.798C108.836,136.798 100,108.626 100,97.742C100,86.858 108.836,113.49 119.72,113.49Z"/>
         </g>
     </g>
-</svg>
+</svg> -->
   </div>
 </template>
 
@@ -59,7 +59,7 @@ export default {
   methods: {
     fetchData() {
       axios
-        .get("http://0.0.0.0:8081/personae/random")
+        .get("http://localhost:8081/personae/random")
         .then((response) => {
           console.log(response.data.persona.gender.unweighted);
           this.dataset = [
