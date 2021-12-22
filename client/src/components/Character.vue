@@ -2,24 +2,26 @@
   <div class="container-md">
         <div id="error" v-if="failed">{{ error }}</div>
     <div class="card">
+      <div class="card-header text-end"><a href="#">Settings</a></div>
   <div class="card-body">
+    <Avatar />
     <h5 class="card-title">Firstname Lastname</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
-  <ul class="list-group list-group-flush" v-for="character of dataset" :key="character.id">
+  <ul class="list-group list-group-flush text-start" v-for="character of dataset" :key="character.id">
       <li class="list-group-item">
-        <span class="highlight">Nationality</span> {{ character.nationality }}
+        <span class="text-muted">Nationality</span> {{ character.nationality }}
       </li>
-      <li class="list-group-item"><span class="highlight">Age</span> {{ character.age }}</li>
+      <li class="list-group-item"><span class="text-muted">Age</span> {{ character.age }}</li>
       <li class="list-group-item">
-        <span class="highlight">Sexuality</span> {{ character.sexuality }}
+        <span class="text-muted">Sexuality</span> {{ character.sexuality }}
       </li>
       <li class="list-group-item">
-        <span class="highlight">Gender</span>
+        <span class="text-muted">Gender</span>
         {{ character.gender.description }} / {{ character.gender.identifier }}
       </li>
       <li class="list-group-item">
-        <span class="highlight">Profession</span> {{ character.profession }}
+        <span class="text-muted">Profession</span> {{ character.profession }}
       </li>
     </ul>
   <div class="card-body">
@@ -31,8 +33,10 @@
 
 <script>
 import axios from "axios";
+import Avatar from "./Avatar.vue";
 
 export default {
+  components: { Avatar },
   methods: {
     fetchData() {
       axios
@@ -77,39 +81,10 @@ export default {
 </script>
 
 <style scoped>
-/* ul {
-  list-style: none;
-  padding: 0;
-}
-li {
-  background: #f1f1f1;
-  padding: 10px 10px 10px 10px;
-  margin: 0 0 10px 0;
-}*/
-.highlight {
-  font-weight: bold;
-}
 
 #error {
   background: #993333;
   color: white;
   padding: 10px;
-}
-
-#regenerate {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight:bold;
-  font-size: 1.2em;
-    background: #339999;
-    color: white;
-    padding: 6px 12px;
-    border: 0px;
-    border-radius: 4px;
-}
-button#regenerate:hover {
-        background: #006666;
-        cursor: pointer;
 }
 </style>
