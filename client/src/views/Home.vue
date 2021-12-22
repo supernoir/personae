@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <Avatar/>
-    <h1>Hello</h1>
+    <!-- <Avatar/> -->
+    <h1>Personae</h1>
     <Character/>
   </div>
 </template>
