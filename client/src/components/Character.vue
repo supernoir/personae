@@ -1,25 +1,31 @@
 <template>
-  <div>
-    <div id="error" v-if="failed">{{ error }}</div>
-    <ul v-for="character of dataset" :key="character.id">
-      <li>
+  <div class="container-md">
+        <div id="error" v-if="failed">{{ error }}</div>
+    <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Firstname Lastname</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush" v-for="character of dataset" :key="character.id">
+      <li class="list-group-item">
         <span class="highlight">Nationality</span> {{ character.nationality }}
       </li>
-      <li><span class="highlight">Age</span> {{ character.age }}</li>
-      <li>
+      <li class="list-group-item"><span class="highlight">Age</span> {{ character.age }}</li>
+      <li class="list-group-item">
         <span class="highlight">Sexuality</span> {{ character.sexuality }}
       </li>
-      <li>
+      <li class="list-group-item">
         <span class="highlight">Gender</span>
         {{ character.gender.description }} / {{ character.gender.identifier }}
       </li>
-      <li>
+      <li class="list-group-item">
         <span class="highlight">Profession</span> {{ character.profession }}
       </li>
     </ul>
-    <button id="regenerate" v-on:click="regenerate">Generate new persona</button>
-
-
+  <div class="card-body">
+    <button type="button" class="btn btn-primary" v-on:click="regenerate">Generate new persona</button>
+  </div>
+</div>
   </div>
 </template>
 
@@ -71,7 +77,7 @@ export default {
 </script>
 
 <style scoped>
-ul {
+/* ul {
   list-style: none;
   padding: 0;
 }
@@ -79,7 +85,7 @@ li {
   background: #f1f1f1;
   padding: 10px 10px 10px 10px;
   margin: 0 0 10px 0;
-}
+}*/
 .highlight {
   font-weight: bold;
 }

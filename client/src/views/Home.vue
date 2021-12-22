@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home container-fluid">
     <!-- <Avatar/> -->
     <h1>Personae</h1>
     <Character/>
